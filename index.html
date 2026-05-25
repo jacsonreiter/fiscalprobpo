@@ -20,7 +20,7 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
+  body { overflow-x: hidden;
     font-family: 'DM Sans', sans-serif;
     background: var(--branco);
     color: var(--azul);
@@ -495,17 +495,69 @@
   .tab-content.active { display: block; }
 
   @media (max-width: 900px) {
-    .hero-inner, .solucao-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 36px; }
-    .dor-grid, .precos-grid, .porq-grid { grid-template-columns: 1fr; }
-    .processo-steps { grid-template-columns: 1fr 1fr; }
-    .processo-steps::before { display: none; }
-    nav { padding: 16px 20px; }
+    /* NAV */
+    nav { padding: 14px 20px; }
     .nav-links { display: none; }
-    .prop-header { flex-direction: column; gap: 16px; }
+    .nav-cta { padding: 8px 16px; font-size: 13px; }
+
+    /* HERO */
+    .hero { padding: 100px 20px 60px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 16px; }
+    .hero-btns { flex-direction: column; }
+    .btn-primary, .btn-secondary { text-align: center; padding: 14px 24px; }
+
+    /* SEÇÕES */
+    .dor, .solucao, .precos, .porque, .processo, .proposta, .cta-final {
+      padding: 60px 20px;
+    }
+    .section-title { font-size: 28px; }
+    .section-sub { font-size: 16px; }
+
+    /* GRIDS */
+    .dor-grid, .precos-grid, .porq-grid { grid-template-columns: 1fr; }
+    .solucao-grid { grid-template-columns: 1fr; gap: 40px; }
+    .precos-grid .preco-card.destaque { transform: scale(1); }
+
+    /* PROCESSO */
+    .processo-steps {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .processo-steps::before { display: none; }
+    .proc-step { display: flex; align-items: flex-start; gap: 16px; text-align: left; }
+    .proc-num { margin: 0; flex-shrink: 0; width: 48px; height: 48px; font-size: 18px; }
+
+    /* TABS */
+    .tabs { flex-wrap: wrap; }
+    .tab { flex: 1; text-align: center; padding: 10px 12px; font-size: 13px; }
+
+    /* PROPOSTA */
+    .prop-header { flex-direction: column; gap: 16px; padding: 32px 24px; }
     .prop-header-right { text-align: left; }
-    .prop-body { padding: 32px 24px; }
-    .prop-footer { flex-direction: column; gap: 8px; text-align: center; }
+    .prop-body { overflow-x: hidden; padding: 24px 20px; }
+    .prop-footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
+    .prop-assinatura { grid-template-columns: 1fr; gap: 24px; }
+    .prop-table { font-size: 13px; }
+    .prop-table th, .prop-table td { padding: 10px 10px; }
+    .prop-total { flex-direction: column; gap: 8px; text-align: center; }
+    .prop-total-valor { font-size: 24px; }
+
+    /* CTA FINAL */
+    .cta-final h2 { font-size: 30px; }
+    .cta-final p { font-size: 16px; }
+    .cta-btns { flex-direction: column; align-items: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 26px; }
+    .section-title { font-size: 24px; }
+    .hero-card { padding: 20px; }
+    .solucao-visual { padding: 24px 20px; }
+    .preco-card { padding: 24px 20px; }
+    .nav-logo { font-size: 17px; }
+    .nav-cta { font-size: 12px; padding: 8px 12px; }
   }
 </style>
 </head>
